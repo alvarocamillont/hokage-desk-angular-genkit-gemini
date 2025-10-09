@@ -31,7 +31,11 @@
     "@angular/platform-server": "^20.3.0",
     "@angular/router": "^20.3.0",
     "@angular/ssr": "^20.3.4",
+    "@genkit-ai/google-genai": "^1.21.0",
+    "data-urls": "^6.0.0",
     "express": "^5.1.0",
+    "genkit": "^1.21.0",
+    "node-fetch": "^3.3.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
