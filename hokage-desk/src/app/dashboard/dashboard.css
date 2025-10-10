@@ -1,0 +1,6 @@
+.avatar-stack > div {
+  margin-left: -0.75rem;
+}
+.avatar-stack > div:first-child {
+  margin-left: 0;
+}
