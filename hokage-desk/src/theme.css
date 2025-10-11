@@ -1,0 +1,18 @@
+@theme {
+  --color-primary: #4A6741;
+  --color-background-light: #FDFBF5;
+  --color-background-dark: #2D2D2D;
+  --color-card-dark: #3C3C3C;
+  --color-leaf-green: #4A5C43;
+  --color-leaf-green-dark: #3A4A35;
+  --color-text-light: #2D3748;
+  --color-text-dark: #E2E8F0;
+
+  --font-display: "Space Grotesk", sans-serif;
+
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+}
