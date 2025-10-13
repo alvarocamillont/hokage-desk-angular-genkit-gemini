@@ -31,13 +31,15 @@
     "@angular/platform-server": "^20.3.0",
     "@angular/router": "^20.3.0",
     "@angular/ssr": "^20.3.4",
+    "@genkit-ai/express": "^1.21.0",
     "@genkit-ai/google-genai": "^1.21.0",
     "data-urls": "^6.0.0",
-    "express": "^5.1.0",
+    "express": "^4.21.1",
     "genkit": "^1.21.0",
     "node-fetch": "^3.3.2",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@angular/build": "^20.3.4",
