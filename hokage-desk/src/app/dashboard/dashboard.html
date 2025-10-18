@@ -31,7 +31,7 @@
         <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-white">Generated Mission Scrolls</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           @for (mission of missions(); track mission.missionValue) {
-            <div class="bg-background-light p-6 rounded-xl shadow-md flex flex-col space-y-4">
+            <a [routerLink]="['/detail', mission.id]" class="bg-background-light p-6 rounded-xl shadow-md flex flex-col space-y-4 cursor-pointer hover:bg-primary/10 transition-colors">
               <div class="flex-grow">
                 <div class="flex justify-between items-start mb-2">
                   <h3 class="text-xl font-bold text-gray-800">{{ mission.assignedTeam }}</h3>
@@ -48,11 +48,7 @@
                   </div>
                 </div>
               </div>
-              <button
-                class="w-full mt-4 text-primary border border-primary rounded-lg py-2 px-4 hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
-                View Details
-              </button>
-            </div>
+            </a>
           }
         </div>
       </section>

@@ -1,70 +1,47 @@
 <div class="min-h-screen flex items-center justify-center p-4">
-    <main
-        class="w-full max-w-4xl bg-primary text-text-light dark:bg-gray-800 dark:text-text-dark rounded-xl shadow-lg p-6 md:p-8">
-        <header class="mb-6">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                <h1 class="text-3xl md:text-4xl font-bold text-leaf-green dark:text-leaf-green-dark">Operation:
-                    Sunagakure Recon</h1>
-                <div class="flex items-center gap-3">
-                    <span class="custom-red-chip text-white text-xs font-bold px-3 py-1 rounded-full">Rank A</span>
-                    <span class="custom-blue-chip text-white text-xs font-bold px-3 py-1 rounded-full">Jonin</span>
+    @if (mission(); as vm) {
+        <main
+            class="w-full max-w-4xl bg-primary text-text-light dark:bg-gray-800 dark:text-text-dark rounded-xl shadow-lg p-6 md:p-8">
+            <header class="mb-6">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                    <h1 class="text-3xl md:text-4xl font-bold text-leaf-green dark:text-leaf-green-dark">Operation:
+                        {{ vm.assignedTeam }}</h1>
+                    <div class="flex items-center gap-3">
+                        <span class="custom-red-chip text-white text-xs font-bold px-3 py-1 rounded-full">Rank {{ vm.difficulty }}</span>
+                        <span class="custom-blue-chip text-white text-xs font-bold px-3 py-1 rounded-full">{{ vm.ninjaTeamLevel }}</span>
+                    </div>
                 </div>
+            </header>
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-xl font-bold mb-2 text-leaf-green dark:text-leaf-green-dark">Mission Briefing</h2>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                        {{ vm.detailedDescription }}
+                    </p>
+                </section>
+                <section>
+                    <h2 class="text-xl font-bold mb-2 text-leaf-green dark:text-leaf-green-dark">Mission Value</h2>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-2xl text-leaf-green dark:text-leaf-green-dark">
+                            account_balance_wallet
+                        </span>
+                        <p class="text-lg font-bold text-gray-700 dark:text-gray-300">{{ vm.missionValue }}</p>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="text-xl font-bold mb-4 text-leaf-green dark:text-leaf-green-dark">Assigned Team: {{ vm.assignedTeam }}
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                        @for (team of vm.teamMembers; track team) {
+                            <div
+                                class="flex flex-col items-center p-4 bg-background-light dark:bg-gray-700 rounded-lg shadow-sm">
+                                <h3 class="font-bold text-lg text-text-light dark:text-text-dark">{{ team.name }}</h3>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">{{ team.specialty }}</p>
+                            </div>
+                        }
+                    </div>
+                </section>
             </div>
-        </header>
-        <div class="mb-6">
-            <img alt="Dramatic desert landscape with rocky formations under a clear blue sky"
-                class="w-full h-64 object-cover rounded-lg"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5aXhyeuiN7im2oFx8RhP3Y7rdCeu5yR9tiXykwPW7v920TKd-_E7XmBvXDhu1pTCz_0QDFcI8n-vFB6XFa-hTanSmoUdHv_Dv6FPlvPJZ3rny8dNn9YgjhY4UYEPUVGjGe1XYTQjb66oAIKjXAN3U6zsSlW4TmWaMd9aKkNYuQo5rtwV4ZTWAdL_KA9y6iGSjCHrgiKnkz5CQEHYIMZUW6rUCMPr7lN-hgjoH-ydGfHaErpJwLMcDKgiWHHWoq7zGwwM7-mJvTKSB" />
-        </div>
-        <div class="space-y-8">
-            <section>
-                <h2 class="text-xl font-bold mb-2 text-leaf-green dark:text-leaf-green-dark">Mission Briefing</h2>
-                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    Intel reports suggest that rogue ninja have established a hidden outpost near the border of the Land
-                    of Wind. The primary objective is to infiltrate the area, gather information on their numbers and
-                    resources, and avoid direct engagement. A secondary objective is to identify their leader if
-                    possible. This is a high-stakes reconnaissance mission.
-                </p>
-            </section>
-            <section>
-                <h2 class="text-xl font-bold mb-2 text-leaf-green dark:text-leaf-green-dark">Mission Value</h2>
-                <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-2xl text-leaf-green dark:text-leaf-green-dark">
-                        account_balance_wallet
-                    </span>
-                    <p class="text-lg font-bold text-gray-700 dark:text-gray-300">500,000 Ryō</p>
-                </div>
-            </section>
-            <section>
-                <h2 class="text-xl font-bold mb-4 text-leaf-green dark:text-leaf-green-dark">Assigned Team: Team Guy
-                </h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    <div
-                        class="flex flex-col items-center p-4 bg-background-light dark:bg-gray-700 rounded-lg shadow-sm">
-                        <div class="w-24 h-24 rounded-full bg-cover bg-center mb-3 border-4 border-leaf-green-dark"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCNzYcV05Rzr_9Gf3C8R_K4w7wLAJWcx_dj6KwRBYzYMLZb57G5DwclGyX8BhLNzU_nwZA3SskA1Sdfbr2W8MHyLgVyJ_alW9OxVPlqGijQaOepJ-tv_Xd4Lwzk5Ck34h-IXl6c-2vy4TeC5jH4sZGYBsgfGsAoYTxXvXkM1r1AyQtqieD8XoEvLhFRxneQQRQ2HAc_Q9BzdYj3-rtCPhKLmLdkcI4KcB9uLVrxV8uBrS_G-7sh1X1YLItqmeQfeQaPY9R4TlQkcCDH');">
-                        </div>
-                        <h3 class="font-bold text-lg text-text-light dark:text-text-dark">Might Guy</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Taijutsu Master</p>
-                    </div>
-                    <div
-                        class="flex flex-col items-center p-4 bg-background-light dark:bg-gray-700 rounded-lg shadow-sm">
-                        <div class="w-24 h-24 rounded-full bg-cover bg-center mb-3 border-4 border-leaf-green-dark"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxcPyRzYK2RkXwJj-Th3N6oFAor740g-hsVknz-_YcB7WOxQdNaYJ9S-yLU-kbYTy0X6QwUEGGi5svm5m4V8JghZB33zOfDvSyllh-lksrvqcooQD57NVBHw-9X3OlNLbEpOI19zZ2h-d0jueLELhVzb-PiNBVWHCcGVBt352rBzOLhUY6xsvsIhjisdwysEGHVL6uy5tBPHsa32vdLIJ6Woa9fTEAxMXUEhxjiwXhNwVYMytK0IM5l0bcqXZYiK3ZGlwCOIP-3eIW');">
-                        </div>
-                        <h3 class="font-bold text-lg text-text-light dark:text-text-dark">Rock Lee</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">The Eight Gates</p>
-                    </div>
-                    <div
-                        class="flex flex-col items-center p-4 bg-background-light dark:bg-gray-700 rounded-lg shadow-sm">
-                        <div class="w-24 h-24 rounded-full bg-cover bg-center mb-3 border-4 border-leaf-green-dark"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAEvwZZgfpiPKRQU-0uxbpKi5w9wRNWyVd2lTe05TC_CFxVdXMDZeis2ECOAgdR4wAOPOXUz00IJUdOMj2IaHTnnHJ-M6_6e5ucttAW7X6-CYoISe8OyV4Gsdk8dAgNt-wLkY3Pyhl_LW5rwGoy2K8ybnLxIbk0ni92Dl5zOlVYY0kcDZf4Ym2Moz_-cbnYIrT-dzYyU2fldBuNb6VI6ILiCiWxkQDEm50aqyv60_6TA-x75g33mXkTIjVhAN5yBjfm5zPYnGrQTLJM');">
-                        </div>
-                        <h3 class="font-bold text-lg text-text-light dark:text-text-dark">Neji Hyuga</h3>
-                        <p class="text-sm text-gray-600 dark:text-gray-400">Byakugan</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
+        </main>
+    }
 </div>

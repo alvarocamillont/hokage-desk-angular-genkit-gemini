@@ -1,9 +1,10 @@
 
 import { HttpClient } from '@angular/common/http';
-import { Injectable, inject, signal } from '@angular/core';
+import { Injectable, computed, inject, signal } from '@angular/core';
 import { take } from 'rxjs';
 
 export interface Mission {
+  id: string;
   difficulty: string;
   missionValue: string;
   detailedDescription: string;
@@ -30,5 +31,9 @@ export class MissionService {
       .subscribe((response) => {
         this.missions.update((missions) => [...missions, response]);
       });
+  }
+
+  getMissionById(id: string) {
+    return computed(() => this.missions().find((mission) => mission.id === id));
   }
 }
