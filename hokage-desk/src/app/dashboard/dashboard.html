@@ -47,18 +47,13 @@
               <a [routerLink]="['/detail', mission.id]" class="bg-background-light p-6 rounded-xl shadow-md flex flex-col space-y-4 cursor-pointer hover:bg-primary/10 transition-colors">
                 <div class="flex-grow">
                   <div class="flex justify-between items-start mb-2">
-                    <h3 class="text-xl font-bold text-gray-800">{{ mission.assignedTeam }}</h3>
+                    <h3 class="text-xl font-bold text-gray-800">{{ mission.detailedDescription }}</h3>
                     <span
                       class="inline-block bg-blue-200 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Rank
                       {{ mission.difficulty }}</span>
                   </div>
                   <div class="flex items-center space-x-2">
-                    <p class="text-sm text-gray-600">Assigned Team:</p>
-                    <div class="flex avatar-stack">
-                      @for (member of mission.teamMembers; track member.name) {
-                        <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-background-light"></div>
-                      }
-                    </div>
+                    <p class="text-sm text-gray-600">Assigned Team: {{ mission.assignedTeam }}</p>
                   </div>
                 </div>
               </a>
