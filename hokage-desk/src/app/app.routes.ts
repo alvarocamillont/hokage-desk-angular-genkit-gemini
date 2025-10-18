@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard';
-import { DetailComponent } from './detail/detail';
 
 export const routes: Routes = [
-    { path: '', component: DashboardComponent },
-    { path: 'detail', component: DetailComponent },
+    { path: '', loadComponent: () => import('./dashboard/dashboard').then(c => c.DashboardComponent) },
+    { path: 'detail', loadComponent: () => import('./detail/detail').then(c => c.DetailComponent) },
 ];

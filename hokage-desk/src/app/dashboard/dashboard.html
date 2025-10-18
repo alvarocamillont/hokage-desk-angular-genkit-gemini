@@ -11,6 +11,7 @@
               <label class="block text-sm font-medium text-gray-300 mb-2" for="mission-directive">Mission
                 Directive</label>
               <textarea
+                [ngModel]="missionDefinition()" (ngModelChange)="missionDefinition.set($event)"
                 class="w-full border rounded-lg border-gray-600 bg-gray-700/50 focus:border-primary focus:ring-primary placeholder:text-gray-500 py-2 px-3 "
                 id="mission-directive" name="mission-directive"
                 placeholder="Describe the mission objectives, targets, and any special considerations..."
@@ -18,8 +19,9 @@
             </div>
 
             <button
+              (click)="createMission()"
               class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-card-dark focus:ring-primary transition-colors"
-              type="submit">
+              type="button">
               Generate Mission Scroll
             </button>
           </form>
@@ -28,50 +30,30 @@
       <section>
         <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-white">Generated Mission Scrolls</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-background-light p-6 rounded-xl shadow-md flex flex-col space-y-4">
-            <div class="flex-grow">
-              <div class="flex justify-between items-start mb-2">
-                <h3 class="text-xl font-bold text-gray-800">Operation: Wave Breaker</h3>
-                <span
-                  class="inline-block bg-blue-200 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Rank
-                  B</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <p class="text-sm text-gray-600">Assigned Team:</p>
-                <div class="flex avatar-stack">
-                  <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-background-light"></div>
-                  <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-background-light"></div>
-                  <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-background-light"></div>
+          @for (mission of missions(); track mission.missionValue) {
+            <div class="bg-background-light p-6 rounded-xl shadow-md flex flex-col space-y-4">
+              <div class="flex-grow">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-xl font-bold text-gray-800">{{ mission.assignedTeam }}</h3>
+                  <span
+                    class="inline-block bg-blue-200 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Rank
+                    {{ mission.difficulty }}</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <p class="text-sm text-gray-600">Assigned Team:</p>
+                  <div class="flex avatar-stack">
+                    @for (member of mission.teamMembers; track member.name) {
+                      <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-background-light"></div>
+                    }
+                  </div>
                 </div>
               </div>
+              <button
+                class="w-full mt-4 text-primary border border-primary rounded-lg py-2 px-4 hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
+                View Details
+              </button>
             </div>
-            <button
-              class="w-full mt-4 text-primary border border-primary rounded-lg py-2 px-4 hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
-              View Details
-            </button>
-          </div>
-          <div class="bg-background-light p-6 rounded-xl shadow-md flex flex-col space-y-4">
-            <div class="flex-grow">
-              <div class="flex justify-between items-start mb-2">
-                <h3 class="text-xl font-bold text-gray-800">The Stolen Scroll</h3>
-                <span
-                  class="inline-block bg-green-200 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Rank
-                  C</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <p class="text-sm text-gray-600">Assigned Team:</p>
-                <div class="flex avatar-stack">
-                  <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-background-light"></div>
-                  <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-background-light"></div>
-                  <div class="w-8 h-8 rounded-full bg-gray-300 border-2 border-background-light"></div>
-                </div>
-              </div>
-            </div>
-            <button
-              class="w-full mt-4 text-primary border border-primary rounded-lg py-2 px-4 hover:bg-primary/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary">
-              View Details
-            </button>
-          </div>
+          }
         </div>
       </section>
     </main>

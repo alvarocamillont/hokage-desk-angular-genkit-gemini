@@ -4,7 +4,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   selector: 'app-detail',
   templateUrl: './detail.html',
   styleUrls: ['./detail.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
 export class DetailComponent {
 
