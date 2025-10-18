@@ -13,7 +13,6 @@ const ai = genkit({
 // Define input schema
 export const MissionDefinitionSchema = z.object({
     definition: z.string().describe('Definition of the mission'),
-    language: z.string().optional().describe('Output language'),
 });
 
 // Define output schema
@@ -74,7 +73,7 @@ export const missionGeneratorFlow = ai.defineFlow(
         const prompt =`
         You are a mission assignment expert from Konohagakure, with deep knowledge of every shinobi and official team from both the Naruto and Boruto eras.
         Your primary task is to take a brief mission concept and expand it into a complete, official mission file. The initial concept from the user is: "${input.definition}".
-        All generated content must be in the following language: ${input.language || 'English'}.
+        All generated content must be in the same language as the user's input.
 
         IMPORTANT LOGIC:
         1.  Elaborate on the user's concept to create a detailed mission description, including background, objectives, and known risks.
