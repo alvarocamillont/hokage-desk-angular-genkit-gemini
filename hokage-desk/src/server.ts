@@ -5,7 +5,6 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
-import { expressHandler } from '@genkit-ai/express';
 import { missionGeneratorFlow } from './flows';
 import { join } from 'node:path';
 
@@ -16,7 +15,15 @@ const angularApp = new AngularNodeAppEngine();
 
 app.use(express.json());
 
-app.post('/api/mission', expressHandler(missionGeneratorFlow));
+app.post('/api/mission', async (req, res) => {
+  try {
+    const result = await missionGeneratorFlow(req.body);
+    res.json(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: (error as Error).message });
+  }
+});
 
 /**
  * Example Express Rest API endpoints can be defined here.
