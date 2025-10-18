@@ -16,6 +16,7 @@ export class DashboardComponent {
 
   missionDefinition = signal('');
   missions = this.missionService.missions;
+  loading = this.missionService.loading;
 
   createMission() {
     this.missionService.createMission(this.missionDefinition());

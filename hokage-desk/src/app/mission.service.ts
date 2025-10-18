@@ -21,15 +21,18 @@ export interface Mission {
 })
 export class MissionService {
   missions = signal<Mission[]>([]);
+  loading = signal(false);
 
   private readonly http = inject(HttpClient);
 
   createMission(definition: string) {
+    this.loading.set(true);
     this.http
       .post<Mission>('/api/mission', { definition })
       .pipe(take(1))
       .subscribe((response) => {
         this.missions.update((missions) => [...missions, response]);
+        this.loading.set(false);
       });
   }
 
