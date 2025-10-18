@@ -1,7 +1,4 @@
 {
-  "context": {
-    "fileName": "GENKIT.md"
-  },
   "mcpServers": {
     "genkit": {
       "command": "genkit",
@@ -17,5 +14,6 @@
         "run_shell_command(npx genkit start)"
       ]
     }
-  }
+  },
+  "contextFileName": "GENKIT.md"
 }

@@ -33,3 +33,11 @@ You are an expert in TypeScript, Angular, and scalable web application developme
 - Design services around a single responsibility
 - Use the `providedIn: 'root'` option for singleton services
 - Use the `inject()` function instead of constructor injection
+
+## Genkit Integration
+
+This project uses Genkit to provide AI-powered features. The Genkit flows are defined in the `src/flows.ts` file. The `missionGeneratorFlow` is a Genkit flow that takes a mission definition as input and returns a complete mission file.
+
+The Express server in `src/server.ts` exposes a `/api/mission` endpoint to run the `missionGeneratorFlow`.
+
+When working with Genkit, make sure to follow the Genkit development guidelines.
