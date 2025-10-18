@@ -4,8 +4,7 @@
             class="w-full max-w-4xl bg-primary text-text-light dark:bg-gray-800 dark:text-text-dark rounded-xl shadow-lg p-6 md:p-8">
             <header class="mb-6">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <h1 class="text-3xl md:text-4xl font-bold text-leaf-green dark:text-leaf-green-dark">Operation:
-                        {{ vm.assignedTeam }}</h1>
+                    <h1 class="text-3xl md:text-4xl font-bold text-leaf-green dark:text-leaf-green-dark">{{ vm.title }}</h1>
                     <div class="flex items-center gap-3">
                         <span class="custom-red-chip text-white text-xs font-bold px-3 py-1 rounded-full">Rank {{ vm.difficulty }}</span>
                         <span class="custom-blue-chip text-white text-xs font-bold px-3 py-1 rounded-full">{{ vm.ninjaTeamLevel }}</span>
@@ -22,6 +21,9 @@
                 <section>
                     <h2 class="text-xl font-bold mb-2 text-leaf-green dark:text-leaf-green-dark">Mission Value</h2>
                     <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-2xl text-leaf-green dark:text-leaf-green-dark">
+                            account_balance_wallet
+                        </span>
                         <p class="text-lg font-bold text-gray-700 dark:text-gray-300">{{ vm.missionValue }}</p>
                     </div>
                 </section>

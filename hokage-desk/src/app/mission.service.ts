@@ -5,6 +5,7 @@ import { take } from 'rxjs';
 
 export interface Mission {
   id: string;
+  title: string;
   difficulty: string;
   missionValue: string;
   detailedDescription: string;

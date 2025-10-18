@@ -20,6 +20,7 @@ export const MissionDefinitionSchema = z.object({
 export const missionSchema = z
   .object({
     id: z.string().describe('Unique identifier for the mission'),
+    title: z.string().describe('A creative and fitting title for the mission.'),
     difficulty: z
       .string()
       .describe(
@@ -81,9 +82,10 @@ export const missionGeneratorFlow = ai.defineFlow(
         All generated content must be in the same language as the user's input.
 
         IMPORTANT LOGIC:
-        1.  Elaborate on the user's concept to create a detailed mission description, including background, objectives, and known risks.
-        2.  Select REAL characters from the Naruto or Boruto universe for the team. The team composition must be logical for the mission's assigned difficulty. Do not assign Kage-level shinobi to a D-rank mission.
-        3.  For the team name, prioritize using an official team name (e.g., 'Team 7') if the members align. Otherwise, create a fitting squad name.
+        1.  Generate a creative and fitting title for the mission.
+        2.  Elaborate on the user's concept to create a detailed mission description, including background, objectives, and known risks.
+        3.  Select REAL characters from the Naruto or Boruto universe for the team. The team composition must be logical for the mission's assigned difficulty. Do not assign Kage-level shinobi to a D-rank mission.
+        4.  For the team name, prioritize using an official team name (e.g., 'Team 7') if the members align. Otherwise, create a fitting squad name.
 
         Generate the output in the requested JSON format.
       `;
