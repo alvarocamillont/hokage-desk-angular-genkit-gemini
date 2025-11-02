@@ -1,0 +1,181 @@
+### **Apresentação Completa: Missão Salvar o Hokage!**
+
+**Tema:** Naruto/Boruto com bom humor e foco em tecnologia de ponta.
+**Duração:** 45 minutos
+
+---
+
+### **Slide 1: Abertura**
+
+*   **Ato:** 1 - A Crise na Aldeia da Folha
+*   **Tempo Estimado:** 1 min
+*   **Visual do Slide:** Uma imagem de impacto sua. Ao lado, o título da palestra. No rodapé, os logos do Angular, Genkit, Gemini e do Santander.
+    *   **Título:** Missão: Salvar o Hokage!
+    *   **Subtítulo:** Dominando a Arte Ninja da IA com Angular, Genkit e Gemini
+    *   **Palestrante:** Alvaro Camillo Neto, Jounin Especialista em Angular e IA da Aldeia da Folha, na Terra do Fogo (que os civis conhecem como Banco Santander 😉)
+*   **Roteiro do Palestrante:**
+    > "(Sobe ao palco com energia) E aí, pessoal! Meu nome é Alvaro Camillo Neto, e eu sou um Jounin Especialista em Angular e IA, reportando diretamente da Aldeia da Folha, na Terra do Fogo... também conhecida como Banco Santander. Hoje, nossa missão é uma das mais importantes já designadas: vamos usar nosso ninjutsu de código para salvar o Sétimo Hokage de seu maior inimigo... a papelada!"
+
+---
+
+### **Slide 2: O Pior Inimigo do Hokage**
+
+*   **Ato:** 1 - A Crise na Aldeia da Folha
+*   **Tempo Estimado:** 2 mins
+*   **Visual do Slide:** A imagem de Naruto exausto, enterrado em uma montanha de documentos.
+    *   [Link da Imagem](https://criticalhits.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/09/Naruto-Paperwork-1-Large-1536x865.jpg.webp)
+*   **Roteiro do Palestrante:**
+    > "Pensem nisso. O herói da Quarta Grande Guerra Ninja... o homem que selou a Kaguya... derrotado por relatórios. Gerar missões, classificar rankings, montar equipes... é um processo manual, lento e que drena o chakra de qualquer um. É o 'Jutsu Proibido da Papelada Infinita'! E a situação só piora na era Boruto!"
+
+---
+
+### **Slide 3: O Paralelo com o Mundo Real**
+
+*   **Ato:** 1 - A Crise na Aldeia da Folha
+*   **Tempo Estimado:** 2 mins
+*   **Visual do Slide:** Ícones simples e limpos representando planilhas, relatórios, tickets e tarefas repetitivas.
+    *   [Link para Ícones](https://www.google.com/search?q=repetitive+work+icons+vector&tbm=isch&ved=2ahUKEwjGkMmA_Y6DAxX0ppUCHf_0A7oQ2-cCegQIABAA&oq=repetitive+work+icons+vector&gs_lcp=CgNpbWcQAzoECCMQJ1DDCliJGGC0G2gAcAB4AIABfIgBggmSAQM3LjSYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=eH59ZdTlEfTV1sQP__aP0A8&bih=773&biw=1394#imgrc=F53y8D_Jz7QjGM)
+*   **Roteiro do Palestrante:**
+    > "Brincadeiras à parte, quem aqui nunca enfrentou isso? CRUDs infinitos, relatórios manuais, tarefas repetitivas que nos impedem de inovar, de criar nossos próprios jutsus. Essa é a *nossa* luta contra a burocracia. Mas e se a gente pudesse automatizar isso de uma forma... inteligente?"
+
+---
+
+### **Slide 4: Apresentando o "Conselheiro Hokage"**
+
+*   **Ato:** 2 - A Solução e as Ferramentas Shinobi
+*   **Tempo Estimado:** 1 min
+*   **Visual do Slide:** Um mockup/logo simples e elegante da aplicação "Conselheiro Hokage".
+*   **Roteiro do Palestrante:**
+    > "É por isso que criamos o **Conselheiro Hokage**! Uma aplicação que usa Inteligência Artificial para ajudar nosso herói a: Primeiro, gerar missões ninja automaticamente. E segundo, classificar o ranking da missão e sugerir o time perfeito para ela. Chega de sofrimento!"
+
+---
+
+### **Slide 5: A Arquitetura Ninja**
+
+*   **Ato:** 2 - A Solução e as Ferramentas Shinobi
+*   **Tempo Estimado:** 2 mins
+*   **Visual do Slide:** Um pergaminho de invocação aberto como imagem de fundo. Sobre ele, três logos com seus "títulos ninja":
+    *   **Aldeia da Folha (Frontend):** Logo do Angular
+    *   **Centro de Comando ANBU (Orquestração):** Logo do Genkit
+    *   **O Sábio dos Seis Caminhos (Inteligência):** Logo do Gemini
+    *   [Link do Pergaminho](https://www.google.com/search?q=naruto+summoning+scroll+open&tbm=isch&ved=2ahUKEwjJgJmh_Y6DAxX7t5UCHWdQD_QQ2-cCegQIABAA&oq=naruto+summoning+scroll+open&gs_lcp=CgNpbWcQAzoECCMQJ1DdB1j9DmDQE2gAcAB4AIABeYgB4gaSAQMzLjaYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=qX59Ze-kC_vv1sQP56C9oA8&bih=773&biw=1394#imgrc=gWc0wZlGqL2-MM)
+*   **Roteiro do Palestrante:**
+    > "Para construir nossa ferramenta, usamos um arsenal shinobi de ponta. Na nossa Aldeia (o frontend), temos o **Angular**. Para orquestrar nossas técnicas (o backend), o **Genkit**. E para o poder de criação, invocamos o modo sábio com o **Gemini**."
+
+---
+
+### **Slide 6: Construindo a Aldeia com Angular e SSR**
+
+*   **Ato:** 2 - A Solução e as Ferramentas Shinobi
+*   **Tempo Estimado:** 2 mins
+*   **Visual do Slide:** Logo do Angular em destaque. Texto: "SSR para uma resposta na velocidade do Relâmpago Amarelo".
+*   **Roteiro do Palestrante:**
+    > "Por que Angular? Porque a Aldeia da Folha precisa de uma fundação robusta e escalável. E usamos SSR (Server-Side Rendering) pelo mesmo motivo que o Minato usava seu Hiraishin no Jutsu: para ter uma resposta inicial quase instantânea! A primeira missão já aparece na tela, sem demora."
+
+---
+
+### **Slide 7: Signals - O Byakugan do Frontend**
+
+*   **Ato:** 2 - A Solução e as Ferramentas Shinobi
+*   **Tempo Estimado:** 2 mins
+*   **Visual do Slide:** O olho Byakugan de um lado. Do outro, um trecho de código simples com `signal()` e `computed()`.
+    *   [Link do Byakugan](https://www.google.com/search?q=byakugan+high+resolution&tbm=isch&ved=2ahUKEwjg4o-v_Y6DAxVJrZUCHWBjBeUQ2-cCegQIABAA&oq=byakugan+high+resolution&gs_lcp=CgNpbWcQAzoECCMQJ1CqA1i2EWDcFGgAcAB4AIABe4gB8gmSAQMzLjeYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=Qn99Zf-kIsna1sQP4MaVqAY&bih=773&biw=1394#imgrc=l-j-f_VqJb62HM)
+*   **Roteiro do Palestrante:**
+    > "Para reatividade, usamos Signals. Pensem neles como o Byakugan do Clã Hyuga: eles enxergam *exatamente* os pontos de chakra da UI que mudaram e atualizam apenas aquilo. É precisão cirúrgica, sem renderizações desnecessárias. Eficiência máxima de chakra!"
+
+---
+
+### **Slide 8: "Stich" UX - O Jutsu de Transformação**
+
+*   **Ato:** 2 - A Solução e as Ferramentas Shinobi
+*   **Tempo Estimado:** 2 mins
+*   **Visual do Slide:** Uma animação/imagem mostrando: [Texto JSON Bruto] -> [Flecha Mágica] -> [Card de Missão Bonito na UI].
+*   **Roteiro do Palestrante:**
+    > "A IA pode ser complexa, mas a experiência do usuário não precisa ser. Usamos 'Stiching', ou costura, na UX. A IA gera o conteúdo bruto, e nós 'costuramos' isso numa interface limpa. É o 'Jutsu de Transformação' que converte dados complexos em algo que até o Naruto entenderia de primeira."
+
+---
+
+### **Slide 9: Gemini CLI - O Jutsu de Invocação Rápida**
+
+*   **Ato:** 3 - O Poder da IA - Genkit e Gemini
+*   **Tempo Estimado:** 2 mins
+*   **Visual do Slide:** Um terminal de computador estilizado mostrando apenas o comando: `gemini init hokage-advisor`.
+*   **Roteiro do Palestrante:**
+    > "Tudo começa com o **Gemini CLI**. É como um pergaminho de invocação: com um comando, você tem toda a estrutura do projeto de IA pronta. Ele cria o ambiente, as configurações... é o jeito mais rápido de começar sua missão, sem precisar ler mil pergaminhos de documentação."
+
+---
+
+### **Slide 10: Genkit - Seu Time de Jounins**
+
+*   **Ato:** 3 - O Poder da IA - Genkit e Gemini
+*   **Tempo Estimado:** 3 mins
+*   **Visual do Slide:** A imagem do Kakashi em pose de estrategista. Ao lado, um diagrama simples: `[Request] -> [Flow do Genkit] -> [Chama Gemini] -> [Formata Saída] -> [Log/Trace] -> [Response]`.
+    *   [Link do Kakashi](https://www.google.com/search?q=kakashi+hatake+thinking+strategic&tbm=isch&ved=2ahUKEwjG_eDD_o6DAxUbqpUCHZJjAksQ2-cCegQIABAA&oq=kakashi+hatake+thinking+strategic&gs_lcp=CgNpbWcQAzoECCMQJ1D0Clj0CmCzDGgAcAB4AIABdYgBdZIBAzAuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=doB9Zau-FJu11sQPks-J2AQ&bih=773&biw=1394#imgrc=W0C8WTRgHj_mBM)
+*   **Roteiro do Palestrante:**
+    > "Se o Gemini é o poder bruto do Rasengan, o **Genkit é o Kakashi**: o líder tático que orquestra tudo. Ele define os `flows` (nossas estratégias de missão), adiciona logs para sabermos o que aconteceu (como um ninja sensor) e garante que a operação seja um sucesso. Ele é o cérebro da operação."
+
+---
+
+### **Slide 11: O Flow por Dentro**
+
+*   **Ato:** 3 - O Poder da IA - Genkit e Gemini
+*   **Tempo Estimado:** 5 mins
+*   **Visual do Slide:** Um trecho de código limpo e bem comentado do `flow` do Genkit, destacando as seções de input, prompt e a chamada `generate()`.
+*   **Roteiro do Palestrante:**
+    > "Olha como é um `flow` na prática. É TypeScript, super familiar! Definimos a entrada (`defineFlow`), montamos o nosso 'pergaminho de instruções' (o prompt), enviamos para o Gemini e formatamos a resposta com Zod para garantir que o pergaminho volte no formato certo. É declarativo, testável e muito poderoso."
+
+---
+
+### **Slide 12: O Pergaminho Secreto - A Arte do Prompt**
+
+*   **Ato:** 3 - O Poder da IA - Genkit e Gemini
+*   **Tempo Estimado:** 5 mins
+*   **Visual do Slide:** A imagem de um pergaminho brilhante e secreto. Ao lado dele, o prompt exato que você usou, em fonte grande e legível.
+    *   [Link do Pergaminho Secreto](https://www.google.com/search?q=naruto+forbidden+scroll+glowing&tbm=isch&ved=2ahUKEwiW3KTS_o6DAxWaipUCHfX4A6kQ2-cCegQIABAA&oq=naruto+forbidden+scroll+glowing&gs_lcp=CgNpbWcQAzoECCMQJ1CfB1ifB2CVCGgAcAB4AIABdYgBdZIBAzAuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=vYB9Zf-iNJqV1sQP9fGP6Ao&bih=773&biw=1394#imgrc=g5Y6i0c3O3z2zM)
+*   **Roteiro do Palestrante:**
+    > "Este é o coração do nosso jutsu de IA: o prompt. É aqui que damos as instruções para o Gemini. 'Aja como um conselheiro Hokage. Crie uma missão ninja criativa, descreva-a, classifique seu rank de D a S e sugira 3 ninjas da Aldeia da Folha qualificados para a missão.' A qualidade do seu pergaminho define a qualidade do jutsu!"
+
+---
+
+### **Slide 13: Missão Completa! DEMO AO VIVO**
+
+*   **Ato:** 4 - Missão Completa!
+*   **Tempo Estimado:** 5 mins
+*   **Visual do Slide:** A tela da sua aplicação rodando, ocupando o slide inteiro. Um título simples: "DEMO AO VIVO".
+*   **Roteiro do Palestrante:**
+    > "Chega de falar, vamos ver o Conselheiro Hokage em ação! Vamos pedir uma nova missão... *clica no botão*. E... pronto! Missão Rank-A: 'Infiltrar na Aldeia da Chuva para investigar boatos sobre um novo líder'. Sugestão de time: Sai, Yamato e Shino Aburame. O Hokage acabou de economizar 30 minutos. Sucesso!"
+
+---
+
+### **Slide 14: O que Aprendemos na Missão de Hoje?**
+
+*   **Ato:** 5 - As Crônicas Shinobi
+*   **Tempo Estimado:** 2 mins
+*   **Visual do Slide:** A imagem icônica do Naruto comendo feliz no Ichiraku Ramen. Ao lado, os pontos chave.
+    *   [Link do Naruto no Ichiraku](https://www.google.com/search?q=naruto+eating+ramen+ichiraku&tbm=isch&ved=2ahUKEwj-xNvi_o6DAxUBrpUCHX2nCgYQ2-cCegQIABAA&oq=naruto+eating+ramen+ichiraku&gs_lcp=CgNpbWcQAzoECCMQJ1DcB1jAGGD8GmgAcAB4AIABf4gBwAmSAQMzLjiYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=C4F9ZYWdDoHc1sQP_c6qMA&bih=773&biw=1394#imgrc=7iZCe3yL9q1vIM)
+*   **Roteiro do Palestrante:**
+    > "Então, o que aprendemos? Primeiro, **Angular com SSR e Signals** cria frontends com a velocidade do Relâmpago Amarelo. Segundo, **Genkit** torna a orquestração de IA menos assustadora que enfrentar o Orochimaru. E o mais importante: **IA não é sobre substituir o Hokage**, é sobre dar a ele as ferramentas para ser um líder melhor... e ter tempo para comer um bom lámen."
+
+---
+
+### **Slide 15: Sua Próxima Missão**
+
+*   **Ato:** 5 - As Crônicas Shinobi
+*   **Tempo Estimado:** 1 min
+*   **Visual do Slide:** QR Codes grandes e links curtos e legíveis para:
+    *   Repositório do projeto no GitHub
+    *   Documentação do Genkit
+    *   Seu Twitter/LinkedIn
+*   **Roteiro do Palestrante:**
+    > "Agora é com vocês! Peguem essas ferramentas e criem seus próprios jutsus. O código do Conselheiro Hokage está disponível para vocês estudarem. Comecem sua jornada para se tornarem os próximos Sábios da IA!"
+
+---
+
+### **Slide 16: Fim da Missão! Perguntas?**
+
+*   **Ato:** 5 - As Crônicas Shinobi
+*   **Tempo Estimado:** Restante do tempo
+*   **Visual do Slide:** Uma imagem do Naruto adulto, sorrindo e fazendo um sinal de "joinha". Suas redes sociais e email bem visíveis.
+    *   [Link do Naruto Joinha](https://www.google.com/search?q=naruto+thumbs+up+smile&tbm=isch&ved=2ahUKEwj7qZHy_o6DAxWStpUCHWRpDRwQ2-cCegQIABAA&oq=naruto+thumbs+up+smile&gs_lcp=CgNpbWcQAzoECCMQJ1DjCliMGGDqGmgAcAB4AIABeYgB5AaSARMyLjWYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=P4F9ZYCyMpLt1sQP5NKa4AE&bih=773&biw=1394#imgrc=0rN5K5I8Qc232M)
+*   **Roteiro do Palestrante:**
+    > "Missão cumprida! Muito obrigado, pessoal. Agora, estou aqui para responder qualquer pergunta que vocês tenham. Mandem ver! Dattebayo!"
