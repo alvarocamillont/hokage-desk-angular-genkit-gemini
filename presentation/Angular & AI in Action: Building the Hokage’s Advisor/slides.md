@@ -54,8 +54,6 @@ O homem que selou a Kaguya...
 
 <br>
 
-<p class="text-sm">Gerar missões, classificar rankings, montar equipes... é um processo manual, lento e que drena o chakra de qualquer um. É o 'Jutsu Proibido da Papelada Infinita'! E a situação só piora na era Boruto!</p>
-
 <!--
 Pensem nisso. O herói da Quarta Grande Guerra Ninja... o homem que selou a Kaguya... derrotado por relatórios. Gerar missões, classificar rankings, montar equipes... é um processo manual, lento e que drena o chakra de qualquer um. É o 'Jutsu Proibido da Papelada Infinita'! E a situação só piora na era Boruto!
 -->
@@ -139,7 +137,7 @@ layout: two-cols
 <br>
 
 <div class="text-center">
-  <img src="https://static.wikia.nocookie.net/narutex-rpg/images/9/9f/Hinatas_byakugan-1280x720.png/revision/latest?cb=20190905012334&path-prefix=pt-br" alt="Byakugan" class="h-48 mx-auto">
+  <img src="https://criticalhits.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/03/byakugan.jpg.webp" alt="Byakugan" class="h-48 mx-auto">
 </div>
 
 ::right::
@@ -196,66 +194,16 @@ layout: two-cols
 
 <br>
 
-```mermaid
-graph TD
-    A[Request] --> B{Flow do Genkit};
-    B --> C[Chama Gemini];
-    C --> D[Formata Saída];
-    D --> E[Log/Trace];
-    E --> F[Response];
-```
-
 <p class="text-sm">Se o Gemini é o poder bruto do Rasengan, o **Genkit é o Kakashi**: o líder tático que orquestra tudo. Ele define os `flows` (nossas estratégias de missão), adiciona logs para sabermos o que aconteceu (como um ninja sensor) e garante que a operação seja um sucesso. Ele é o cérebro da operação.</p>
+
 
 <!--
 Se o Gemini é o poder bruto do Rasengan, o **Genkit é o Kakashi**: o líder tático que orquestra tudo. Ele define os `flows` (nossas estratégias de missão), adiciona logs para sabermos o que aconteceu (como um ninja sensor) e garante que a operação seja um sucesso. Ele é o cérebro da operação.
 -->
 
 ---
-layout: default
----
-
-# O Flow por Dentro
-
-<br>
-
-```typescript
-import { defineFlow, configureGenkit } from '@genkit-ai/core';
-import { geminiPro } from 'genkitx-googleai';
-import * as z from 'zod';
-
-export default configureGenkit({
-  plugins: [googleAI()],
-  logLevel: 'debug',
-  enableTracingAndMetrics: true,
-});
-
-export const missionFlow = defineFlow(
-  {
-    name: 'missionFlow',
-    inputSchema: z.string(),
-    outputSchema: z.string(),
-  },
-  async (prompt) => {
-    const llmResponse = await generate({
-      model: geminiPro,
-      prompt: `Aja como um conselheiro Hokage. Crie uma missão ninja criativa, descreva-a, classifique seu rank de D a S e sugira 3 ninjas da Aldeia da Folha qualificados para a missão.`,
-    });
-
-    return llmResponse.text();
-  }
-);
-```
-
-<p class="text-sm">Olha como é um `flow` na prática. É TypeScript, super familiar! Definimos a entrada (`defineFlow`), montamos o nosso 'pergaminho de instruções' (o prompt), enviamos para o Gemini e formatamos a resposta com Zod para garantir que o pergaminho volte no formato certo. É declarativo, testável e muito poderoso.</p>
-
-<!--
-Olha como é um `flow` na prática. É TypeScript, super familiar! Definimos a entrada (`defineFlow`), montamos o nosso 'pergaminho de instruções' (o prompt), enviamos para o Gemini e formatamos a resposta com Zod para garantir que o pergaminho volte no formato certo. É declarativo, testável e muito poderoso.
--->
-
----
 layout: image-right
-image: https://i.pinimg.com/originals/e6/2a/3b/e62a3b6e3d3be2f74a7a6a8c1a31e0c1.jpg
+image: https://preview.redd.it/what-other-jutsu-do-you-think-there-was-on-this-scroll-v0-720upniymytb1.jpg?auto=webp&s=8d9c608d8c2b6f230702520574aaa42dcd2eda86
 ---
 
 # O Pergaminho Secreto - A Arte do Prompt
@@ -287,15 +235,13 @@ class: text-center
 
 <br>
 
-<p class="text-sm">Chega de falar, vamos ver o Conselheiro Hokage em ação! Vamos pedir uma nova missão... *clica no botão*. E... pronto! Missão Rank-A: 'Infiltrar na Aldeia da Chuva para investigar boatos sobre um novo líder'. Sugestão de time: Sai, Yamato e Shino Aburame. O Hokage acabou de economizar 30 minutos. Sucesso!</p>
-
 <!--
 Chega de falar, vamos ver o Conselheiro Hokage em ação! Vamos pedir uma nova missão... *clica no botão*. E... pronto! Missão Rank-A: 'Infiltrar na Aldeia da Chuva para investigar boatos sobre um novo líder'. Sugestão de time: Sai, Yamato e Shino Aburame. O Hokage acabou de economizar 30 minutos. Sucesso!
 -->
 
 ---
 layout: image-right
-image: https://i.ytimg.com/vi/rpgCiBQvif4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBE2Kk4q6zFroPY4_m6d2udzVW38g
+image: /images/lamen.jpg
 ---
 
 # O que Aprendemos na Missão de Hoje?
