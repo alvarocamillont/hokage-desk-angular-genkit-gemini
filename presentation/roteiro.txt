@@ -83,17 +83,7 @@
 *   **Roteiro do Palestrante:**
     > "Para reatividade, usamos Signals. Pensem neles como o Byakugan do Clã Hyuga: eles enxergam *exatamente* os pontos de chakra da UI que mudaram e atualizam apenas aquilo. É precisão cirúrgica, sem renderizações desnecessárias. Eficiência máxima de chakra!"
 
----
-
-### **Slide 8: "Stich" UX - O Jutsu de Transformação**
-
-*   **Ato:** 2 - A Solução e as Ferramentas Shinobi
-*   **Tempo Estimado:** 2 mins
-*   **Visual do Slide:** Uma animação/imagem mostrando: [Texto JSON Bruto] -> [Flecha Mágica] -> [Card de Missão Bonito na UI].
-*   **Roteiro do Palestrante:**
-    > "A IA pode ser complexa, mas a experiência do usuário não precisa ser. Usamos 'Stiching', ou costura, na UX. A IA gera o conteúdo bruto, e nós 'costuramos' isso numa interface limpa. É o 'Jutsu de Transformação' que converte dados complexos em algo que até o Naruto entenderia de primeira."
-
----
+ ---
 
 ### **Slide 9: Gemini CLI - O Jutsu de Invocação Rápida**
 
@@ -110,7 +100,7 @@
 *   **Ato:** 3 - O Poder da IA - Genkit e Gemini
 *   **Tempo Estimado:** 3 mins
 *   **Visual do Slide:** A imagem do Kakashi em pose de estrategista. Ao lado, um diagrama simples: `[Request] -> [Flow do Genkit] -> [Chama Gemini] -> [Formata Saída] -> [Log/Trace] -> [Response]`.
-    *   [Link do Kakashi](https://www.google.com/search?q=kakashi+hatake+thinking+strategic&tbm=isch&ved=2ahUKEwjG_eDD_o6DAxUbqpUCHZJjAksQ2-cCegQIABAA&oq=kakashi+hatake+thinking+strategic&gs_lcp=CgNpbWcQAzoECCMQJ1D0Clj0CmCzDGgAcAB4AIABdYgBdZIBAzAuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=doB9Zau-FJu11sQPks-J2AQ&bih=773&biw=1394#imgrc=W0C8WTRgHj_mBM)
+    *   [Link do Kakashi](https://static0.cbrimages.com/wordpress/wp-content/uploads/2022/06/0FBA3C58-1E5B-4810-BBA9-C9764DC10C93.jpeg?q=70&fit=contain&w=750&h=422&dpr=1)
 *   **Roteiro do Palestrante:**
     > "Se o Gemini é o poder bruto do Rasengan, o **Genkit é o Kakashi**: o líder tático que orquestra tudo. Ele define os `flows` (nossas estratégias de missão), adiciona logs para sabermos o que aconteceu (como um ninja sensor) e garante que a operação seja um sucesso. Ele é o cérebro da operação."
 
@@ -152,7 +142,7 @@
 *   **Ato:** 5 - As Crônicas Shinobi
 *   **Tempo Estimado:** 2 mins
 *   **Visual do Slide:** A imagem icônica do Naruto comendo feliz no Ichiraku Ramen. Ao lado, os pontos chave.
-    *   [Link do Naruto no Ichiraku](https://www.google.com/search?q=naruto+eating+ramen+ichiraku&tbm=isch&ved=2ahUKEwj-xNvi_o6DAxUBrpUCHX2nCgYQ2-cCegQIABAA&oq=naruto+eating+ramen+ichiraku&gs_lcp=CgNpbWcQAzoECCMQJ1DcB1jAGGD8GmgAcAB4AIABf4gBwAmSAQMzLjiYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=C4F9ZYWdDoHc1sQP_c6qMA&bih=773&biw=1394#imgrc=7iZCe3yL9q1vIM)
+    *   [Link do Naruto no Ichiraku](https://i.ytimg.com/vi/rpgCiBQvif4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBE2Kk4q6zFroPY4_m6d2udzVW38g)
 *   **Roteiro do Palestrante:**
     > "Então, o que aprendemos? Primeiro, **Angular com SSR e Signals** cria frontends com a velocidade do Relâmpago Amarelo. Segundo, **Genkit** torna a orquestração de IA menos assustadora que enfrentar o Orochimaru. E o mais importante: **IA não é sobre substituir o Hokage**, é sobre dar a ele as ferramentas para ser um líder melhor... e ter tempo para comer um bom lámen."
 
@@ -176,6 +166,6 @@
 *   **Ato:** 5 - As Crônicas Shinobi
 *   **Tempo Estimado:** Restante do tempo
 *   **Visual do Slide:** Uma imagem do Naruto adulto, sorrindo e fazendo um sinal de "joinha". Suas redes sociais e email bem visíveis.
-    *   [Link do Naruto Joinha](https://www.google.com/search?q=naruto+thumbs+up+smile&tbm=isch&ved=2ahUKEwj7qZHy_o6DAxWStpUCHWRpDRwQ2-cCegQIABAA&oq=naruto+thumbs+up+smile&gs_lcp=CgNpbWcQAzoECCMQJ1DjCliMGGDqGmgAcAB4AIABeYgB5AaSARMyLjWYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=P4F9ZYCyMpLt1sQP5NKa4AE&bih=773&biw=1394#imgrc=0rN5K5I8Qc232M)
+    *   [Link do Naruto Joinha](https://i.pinimg.com/736x/a3/c2/6c/a3c26c173f6a317431b2ddd586f8b10a.jpg)
 *   **Roteiro do Palestrante:**
     > "Missão cumprida! Muito obrigado, pessoal. Agora, estou aqui para responder qualquer pergunta que vocês tenham. Mandem ver! Dattebayo!"
