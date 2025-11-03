@@ -1,6 +1,6 @@
 ---
 theme: seriph
-background: https://cover.sli.dev
+background: /images/cover.webp
 title: 'Missão: Salvar o Hokage!'
 info: |
   ## Angular & AI in Action: Building the Hokage’s Advisor
@@ -39,7 +39,7 @@ duration: 45min
 
 ---
 layout: image-right
-image: https://criticalhits.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/09/Naruto-Paperwork-1-Large-1536x865.jpg.webp
+image: /images/naruto-paperwork.jpg.webp
 ---
 
 # O Pior Inimigo do Hokage
@@ -90,15 +90,15 @@ layout: intro
 
 <div class="grid grid-cols-3 gap-8">
   <div class="text-center">
-    <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular" class="h-24 mx-auto">
+    <img src="/images/angular-logo.svg" alt="Angular" class="h-24 mx-auto">
     <p class="font-bold">Aldeia da Folha (Frontend)</p>
   </div>
   <div class="text-center">
-    <img src="https://github.com/firebase/genkit/blob/main/docs/resources/genkit-logo-dark.png?raw=true" alt="Genkit" class="h-24 mx-auto">
+    <img src="/images/genkit-logo-dark.png" alt="Genkit" class="h-24 mx-auto">
     <p class="font-bold">Centro de Comando ANBU (Orquestração)</p>
   </div>
   <div class="text-center">
-    <img src="https://www.gstatic.com/lamda/images/gemini_aurora_thumbnail_4g_e74822ff0ca4259beb718.png" alt="Gemini" class="h-24 mx-auto">
+    <img src="/images/gemini-aurora.png" alt="Gemini" class="h-24 mx-auto">
     <p class="font-bold">O Sábio dos Seis Caminhos (Inteligência)</p>
   </div>
 </div>
@@ -116,7 +116,7 @@ layout: default
 <br>
 
 <div class="text-center">
-  <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular" class="h-48 mx-auto">
+  <img src="/images/angular-logo.svg" alt="Angular" class="h-48 mx-auto">
   <p class="text-2xl">SSR para uma resposta na velocidade do Relâmpago Amarelo</p>
 </div>
 
@@ -137,7 +137,7 @@ layout: two-cols
 <br>
 
 <div class="text-center">
-  <img src="https://criticalhits.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2020/03/byakugan.jpg.webp" alt="Byakugan" class="h-48 mx-auto">
+  <img src="/images/byakugan.jpg.webp" alt="Byakugan" class="h-48 mx-auto">
 </div>
 
 ::right::
@@ -187,7 +187,7 @@ layout: two-cols
 <br>
 
 <div class="text-center">
-  <img src="https://static0.cbrimages.com/wordpress/wp-content/uploads/2022/06/0FBA3C58-1E5B-4810-BBA9-C9764DC10C93.jpeg?q=70&fit=contain&w=750&h=422&dpr=1" alt="Kakashi" class="h-48 mx-auto">
+  <img src="/images/kakashi.jpeg" alt="Kakashi" class="h-48 mx-auto">
 </div>
 
 ::right::
@@ -203,7 +203,7 @@ Se o Gemini é o poder bruto do Rasengan, o **Genkit é o Kakashi**: o líder t�
 
 ---
 layout: image-right
-image: https://preview.redd.it/what-other-jutsu-do-you-think-there-was-on-this-scroll-v0-720upniymytb1.jpg?auto=webp&s=8d9c608d8c2b6f230702520574aaa42dcd2eda86
+image: /images/secret-scroll.jpg
 ---
 
 # O Pergaminho Secreto - A Arte do Prompt
@@ -266,15 +266,15 @@ layout: default
 
 <div class="grid grid-cols-3 gap-8 text-center">
   <div>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://github.com/alvarocamillont/hokage-desk" alt="QR Code para o repositório do projeto no GitHub" class="mx-auto">
+    <img src="/images/qr-github.png" alt="QR Code para o repositório do projeto no GitHub" class="mx-auto">
     <p>Repositório no GitHub</p>
   </div>
   <div>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ai.google.dev/genkit/docs" alt="QR Code para a documentação do Genkit" class="mx-auto">
+    <img src="/images/qr-genkit.png" alt="QR Code para a documentação do Genkit" class="mx-auto">
     <p>Documentação do Genkit</p>
   </div>
   <div>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.linkedin.com/in/alvarocamillont/" alt="QR Code para o seu LinkedIn" class="mx-auto">
+    <img src="/images/qr-linkedin.png" alt="QR Code para o seu LinkedIn" class="mx-auto">
     <p>Meu LinkedIn</p>
   </div>
 </div>
@@ -296,13 +296,13 @@ class: text-center
 
 <br>
 
-<img src="https://i.pinimg.com/736x/a3/c2/6c/a3c26c173f6a317431b2ddd586f8b10a.jpg" alt="Naruto Joinha" class="h-64 mx-auto">
+<img src="/images/naruto-thumbs-up.jpg" alt="Naruto Joinha" class="h-64 mx-auto">
 
 <br>
 
 <p>Alvaro Camillo Neto</p>
 <p><a href="https://www.linkedin.com/in/alvarocamillont/">linkedin.com/in/alvarocamillont</a></p>
-<p><a href="https://x.com/alvarocamillont">@alvarocamillont</a></p>
+
 
 <!--
 Missão cumprida! Muito obrigado, pessoal. Agora, estou aqui para responder qualquer pergunta que vocês tenham. Mandem ver! Dattebayo!
