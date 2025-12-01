@@ -1,42 +1,42 @@
-# Tutorial: Criando o Hokage Desk com Angular e Genkit
+# Tutorial: Creando el Hokage Desk con Angular y Genkit
 
-Bem-vindo ao Hokage Desk! Este tutorial o guiará através do processo de criação de uma aplicação Angular com um backend alimentado por IA usando o Genkit da Google.
+¡Bienvenido al Hokage Desk! Este tutorial te guiará a través del proceso de creación de una aplicación Angular con un backend impulsado por IA usando Genkit de Google.
 
-## Pré-requisitos
+## Prerrequisitos
 
-Antes de começarmos, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+Antes de comenzar, asegúrate de tener las siguientes herramientas instaladas en tu máquina:
 
-*   **Node.js:** [https://nodejs.org/](https://nodejs.org/)
+*   **Node.js:** https://nodejs.org/
 *   **Angular CLI:** `npm install -g @angular/cli`
-*   **Git:** [https://git-scm.com/](https://git-scm.com/)
+*   **Git:** https://git-scm.com/
 
-### Obtendo uma Chave de API do Gemini
+### Obteniendo una Clave de API de Gemini
 
-1.  Acesse o [Google AI Studio](https://aistudio.google.com/app) (anteriormente conhecido como "Build with Google").
-2.  Faça login com sua conta do Google.
-3.  Clique em **"Get API key"** no menu à esquerda.
-4.  Clique em **"Create API key in new project"**.
-5.  Copie a chave de API gerada.
+1.  Accede a [Google AI Studio](https://aistudio.google.com/app) (anteriormente conocido como "Build with Google").
+2.  Inicia sesión con tu cuenta de Google.
+3.  Haz clic en **"Get API key"** en el menú de la izquierda.
+4.  Haz clic en **"Create API key in new project"**.
+5.  Copia la clave de API generada.
 
-### Configurando a Variável de Ambiente
+### Configurando la Variable de Entorno
 
-O Genkit lê a chave de API de uma variável de ambiente. Crie uma variável de ambiente, substituindo `<SUA_API_KEY>` pela chave que você copiou:
+Genkit lee la clave de API de una variable de entorno. Crea una variable de entorno, reemplazando `<SUA_API_KEY>` por la clave que copiaste:
 
 ```
-GOOGLE_API_KEY=<SUA_API_KEY>
+GOOGLE_API_KEY=<TU_API_KEY>
 ```
 
-## 1. Criando o Projeto Angular
+## 1. Creando el Proyecto Angular
 
-Vamos começar criando um novo projeto Angular com Server-Side Rendering (SSR) ativado por padrão.
+Comenzaremos creando un nuevo proyecto Angular con Server-Side Rendering (SSR) activado por defecto.
 
 ```bash
 ng new hokage-desk --ssr
 ```
 
-Para o sistema de CSS, selecione Tailwind.
+Para el sistema de CSS, selecciona Tailwind.
 
-Instale as demais dependências do projeto:
+Instala las demás dependencias del proyecto:
 
 ```bash
 npm i genkit
@@ -46,17 +46,17 @@ npm i @genkit-ai/google-genai
 npm i zod@^3.25
 ```
 
-## 2. Configurando o Fluxo do Genkit
+## 2. Configurando el Flujo de Genkit
 
-Agora, vamos criar o coração da nossa funcionalidade de IA.
+Ahora, vamos a crear el corazón de nuestra funcionalidad de IA.
 
-### Crie o Arquivo de Fluxo
+### Crea el Archivo de Flujo
 
-Crie um novo arquivo chamado `flows.ts` dentro da pasta `src/`.
+Crea un nuevo archivo llamado `flows.ts` dentro de la carpeta `src/`.
 
-### Definindo o Fluxo
+### Definiendo el Flujo
 
-Abra `src/flows.ts` e adicione o seguinte código:
+Abre `src/flows.ts` y añade el siguiente código:
 
 ```typescript
 import { genkit } from 'genkit';
@@ -82,49 +82,57 @@ export const missionSchema = z
   .object({
     id: z.string().describe('Unique identifier for the mission'),
     title: z.string().describe('A creative and fitting title for the mission.'),
-    difficulty: z
-      .string()
-      .describe(
-        'Classify the mission into one of the following ranks, based on its complexity and danger: D, C, B, A, or S.'
-      ),
-    missionValue: z
-      .string()
-      .describe(
-        "Define a reward in Ryō. The value must be consistent with the mission's difficulty (e.g., Rank-D missions are low-value, Rank-S missions are very high-value)."
-      ),
-    detailedDescription: z
-      .string()
-      .describe(
-        "Create a detailed, narrative-style mission briefing based on the user's initial input. It should include the background context, a clear primary objective, known risks or enemy intel, and the mission's location. This should read like an official mission scroll given to the team leader."
-      ),
-    ninjaTeamLevel: z
-      .string()
-      .describe(
-        'Based on the mission\'s difficulty, suggest the team\'s rank. Use standard Naruto ranks like Genin, Chunin, Jonin, or ANBU. For legendary missions, you could even specify Sannin ou Kage-level.'
-      ),
-    assignedTeam: z
-      .string()
-      .describe(
-        "Assign a suitable team. If a known, official team from the Naruto or Boruto universe fits the mission and members (e.g., 'Team 7', 'Ino-Shika-Cho', 'Team Guy'), use its official name. If no existing team is a perfect fit, create a new, thematic squad name (e.g., 'Sand Village Barrier Unit', 'Mist Village Cipher Squad')."
-      ),
-    teamMembers: z
-      .array(
-        z.object({
-          name: z
-            .string()
-            .describe(
-              "Select a real character from the Naruto or Boruto anime who would be suitable for this mission's rank and objective."
-            ),
-          specialty: z
-            .string()
-            .describe(
-              "State this character's known signature jutsu or primary skill (e.g., 'Rasengan', 'Sharingan', 'Byakugan', 'Shadow Possession Jutsu')."
-            ),
-        })
-      )
-      .describe(
-        'A list containing exactly 3 members for the ninja team. The members chosen must be real characters from Naruto or Boruto.'
-      ),
+    difficulty:
+      z
+        .string()
+        .describe(
+          'Classify the mission into one of the following ranks, based on its complexity and danger: D, C, B, A, or S.'
+        ),
+    missionValue:
+      z
+        .string()
+        .describe(
+          "Define a reward in Ryō. The value must be consistent with the mission's difficulty (e.g., Rank-D missions are low-value, Rank-S missions are very high-value)."
+        ),
+    detailedDescription:
+      z
+        .string()
+        .describe(
+          "Create a detailed, narrative-style mission briefing based on the user's initial input. It should include the background context, a clear primary objective, known risks or enemy intel, and the mission's location. This should read like an official mission scroll given to the team leader."
+        ),
+    ninjaTeamLevel:
+      z
+        .string()
+        .describe(
+          'Based on the mission\'s difficulty, suggest the team\'s rank. Use standard Naruto ranks like Genin, Chunin, Jonin, or ANBU. For legendary missions, you could even specify Sannin ou Kage-level.'
+        ),
+    assignedTeam:
+      z
+        .string()
+        .describe(
+          "Assign a suitable team. If a known, official team from the Naruto or Boruto universe fits the mission and members (e.g., 'Team 7', 'Ino-Shika-Cho', 'Team Guy'), use its official name. If no existing team is a perfect fit, create a new, thematic squad name (e.g., 'Sand Village Barrier Unit', 'Mist Village Cipher Squad')."
+        ),
+    teamMembers:
+      z
+        .array(
+          z.object({
+            name:
+              z
+                .string()
+                .describe(
+                  "Select a real character from the Naruto or Boruto anime who would be suitable for this mission's rank and objective."
+                ),
+            specialty:
+              z
+                .string()
+                .describe(
+                  "State this character's known signature jutsu or primary skill (e.g., 'Rasengan', 'Sharingan', 'Byakugan', 'Shadow Possession Jutsu')."
+                ),
+          })
+        )
+        .describe(
+          'A list containing exactly 3 members for the ninja team. The members chosen must be real characters from Naruto or Boruto.'
+        ),
   })
   .describe('The complete mission file in JSON format.');
 
@@ -169,16 +177,16 @@ export const missionGeneratorFlow = ai.defineFlow(
 ```
 
 Este código:
-1.  Configura o Genkit para usar o plugin da Google AI.
-2.  Define um `system prompt` detalhado para guiar o modelo de IA.
-3.  Usa o Zod para criar esquemas de validação para a entrada e saída do nosso fluxo.
-4.  Cria o `missionGeneratorFlow`, que recebe uma definição de missão como entrada e usa o modelo `gemini-2.5-flash` para gerar uma lista de missões em formato JSON.
+1.  Configura Genkit para usar el plugin de Google AI.
+2.  Define un `system prompt` detallado para guiar el modelo de IA.
+3.  Usa Zod para crear esquemas de validación para la entrada y salida de nuestro flujo.
+4.  Crea el `missionGeneratorFlow`, que recibe una definición de misión como entrada y usa el modelo `gemini-2.5-flash` para generar una lista de misiones en formato JSON.
 
-## 3. Criando o Endpoint da API
+## 3. Creando el Endpoint de la API
 
-Com o fluxo do Genkit pronto, precisamos de um endpoint em nosso servidor Angular SSR para acioná-lo.
+Con el flujo de Genkit listo, necesitamos un endpoint en nuestro servidor Angular SSR para activarlo.
 
-Abra o arquivo `src/server.ts`:
+Abre el archivo `src/server.ts`:
 
 ```typescript
 import {
@@ -208,27 +216,27 @@ app.post('/api/mission', async (req, res) => {
   }
 });
 
-// Código do server continua ...
+// Código del servidor continúa ...
 
 ```
 
-Este trecho de código cria uma rota POST `/api/mission`. Quando essa rota é chamada com uma definição de missão no corpo da requisição, ela executa o `missionGeneratorFlow` e retorna as missões geradas como resposta.
+Este fragmento de código crea una ruta POST `/api/mission`. Cuando se llama a esta ruta con una definición de misión en el cuerpo de la solicitud, ejecuta el `missionGeneratorFlow` y devuelve las misiones generadas como respuesta.
 
-## 4. Criando o Serviço de Missões no Angular
+## 4. Creando el Servicio de Misiones en Angular
 
-Agora, na parte do frontend, vamos criar um serviço para gerenciar o estado das nossas missões.
+Ahora, en la parte del frontend, vamos a crear un servicio para gestionar el estado de nuestras misiones.
 
-### Gere o Serviço
+### Genera el Servicio
 
-Use o Angular CLI para criar um novo serviço:
+Usa Angular CLI para crear un nuevo servicio:
 
 ```bash
 ng generate service mission
 ```
 
-### Implemente o Serviço
+### Implementa el Servicio
 
-Abra o arquivo recém-criado `src/app/mission.ts` e adicione o seguinte código:
+Abre el archivo recién creado `src/app/mission.ts` y añade el siguiente código:
 
 ```typescript
 
@@ -276,19 +284,19 @@ export class MissionService {
 }
 ```
 
-Este serviço:
-1.  Usa um `signal` (`missions`) para armazenar a lista de missões de forma reativa.
-2.  Expõe um `loading` para sinalizar se a requisição da API foi concluída.
-3.  Possui o método `createMission`, que faz uma requisição POST para o nosso endpoint `/api/mission` e atualiza o `missions` com a resposta.
-4.  Possui o método `getMissionById`, que busca uma missão específica na lista pelo seu ID.
+Este servicio:
+1.  Usa una `signal` (`missions`) para almacenar la lista de misiones de forma reactiva.
+2.  Expone un `loading` para señalar si la solicitud de la API ha sido completada.
+3.  Tiene el método `createMission`, que realiza una solicitud POST a nuestro endpoint `/api/mission` y actualiza las `missions` con la respuesta.
+4.  Tiene el método `getMissionById`, que busca una misión específica en la lista por su ID.
 
-## 5. Criando os Componentes da Interface
+## 5. Creando los Componentes de la Interfaz
 
-Finalmente, vamos criar os componentes para exibir as missões.
+Finalmente, vamos a crear los componentes para mostrar las misiones.
 
-### Configura o index
+### Configura el index
 
-Abra o arquivo `src/index.html` e adicione a referência ao arquivo do tema:
+Abre el archivo `src/index.html` y añade la referencia al archivo del tema:
 
 ```html
 <!doctype html>
@@ -309,9 +317,9 @@ Abra o arquivo `src/index.html` e adicione a referência ao arquivo do tema:
 ```
 
 
-### Configura o Tailwind
+### Configura Tailwind
 
-Crie o arquivo `src/theme.css` e configure o Tailwind conforme abaixo:
+Crea el archivo `src/theme.css` y configura Tailwind como se muestra a continuación:
 
 ```css
 @theme {
@@ -333,7 +341,7 @@ Crie o arquivo `src/theme.css` e configure o Tailwind conforme abaixo:
 }
 ```
 
-Abra o arquivo `src/styles.css` e adicione a referência ao arquivo do tema:
+Abre el archivo `src/styles.css` y añade la referencia al archivo del tema:
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
@@ -341,16 +349,16 @@ Abra o arquivo `src/styles.css` e adicione a referência ao arquivo do tema:
 @import "./theme.css";
 ```
 
-### Gere os Componentes
+### Genera los Componentes
 
 ```bash
 ng generate component dashboard
 ng generate component detail
 ```
 
-### Configurando as Rotas
+### Configurando las Rutas
 
-Abra o arquivo `src/app/app.routes.ts` e configure as rotas para os novos componentes:
+Abre el archivo `src/app/app.routes.ts` y configura las rutas para los nuevos componentes:
 
 ```typescript
 import { Routes } from '@angular/router';
@@ -362,15 +370,15 @@ export const routes: Routes = [
 
 ```
 
-Abra o arquivo `src/app/app.html` e substitua o conteúdo gerado pelo Angular CLI pelo seguinte código:
+Abre el archivo `src/app/app.html` y reemplaza el contenido generado por Angular CLI con el siguiente código:
 
 ```html
 <router-outlet></router-outlet>
 ```
 
-### Implementando o `Dashboard`
+### Implementando el `Dashboard`
 
-Este componente terá um formulário para inserir a definição da missão e exibirá a lista de missões geradas.
+Este componente tendrá un formulario para introducir la definición de la misión y mostrará la lista de misiones generadas.
 
 **`src/app/dashboard/dashboard.ts`**
 ```typescript
@@ -489,9 +497,9 @@ export class Dashboard {
 </div>
 ```
 
-### Implementando o `Detail`
+### Implementando el `Detail`
 
-Este componente exibirá os detalhes de uma missão selecionada.
+Este componente mostrará los detalles de una misión seleccionada.
 
 **`src/app/detail/detail.ts`**
 ```typescript
@@ -577,15 +585,16 @@ export class Detail {
 </div>
 ```
 
-## Conclusão
+## Conclusión
 
-Parabéns! Você construiu uma aplicação Angular completa que utiliza o Genkit para gerar conteúdo dinâmico com IA.
+¡Felicidades! Has construido una aplicación Angular completa que utiliza Genkit para generar contenido dinámico con IA.
 
-Para rodar sua aplicação:
+Para ejecutar tu aplicación:
 
 ```bash
 npm start
 ```
 
-Acesse `http://localhost:4200` em seu navegador, digite a descrição da missão e veja a IA em ação!
+Accede a `http://localhost:4200` en tu navegador, escribe la descripción de la misión y ¡observa la IA en acción!
 
+```
