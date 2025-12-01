@@ -34,6 +34,18 @@ Vamos começar criando um novo projeto Angular com Server-Side Rendering (SSR) a
 ng new hokage-desk --ssr
 ```
 
+Como sistema de CSS selecione tailwind
+
+Instale as demais dependencias do projeto
+
+```bash
+npm i genkit
+npm i express@^4.21.1
+npm i @genkit-ai/express
+npm i @genkit-ai/google-genai
+npm i zod@^3.25
+```
+
 ## 2. Configurando o Fluxo do Genkit
 
 Agora, vamos criar o coração da nossa funcionalidade de IA.
@@ -196,6 +208,8 @@ app.post('/api/mission', async (req, res) => {
   }
 });
 
+// Código do server continua ...
+
 ```
 
 Este trecho de código cria uma rota POST `/api/mission`. Quando essa rota é chamada com o nome de um ninja no corpo da requisição, ela executa o `missionGeneratorFlow` e retorna as missões geradas como resposta.
@@ -209,12 +223,12 @@ Agora, na parte do frontend, vamos criar um serviço para gerenciar o estado das
 Use o Angular CLI para criar um novo serviço:
 
 ```bash
-ng generate service app/mission
+ng generate service mission
 ```
 
 ### Implemente o Serviço
 
-Abra o arquivo recém-criado `src/app/mission.service.ts` e adicione o seguinte código:
+Abra o arquivo recém-criado `src/app/mission.ts` e adicione o seguinte código:
 
 ```typescript
 
@@ -272,11 +286,66 @@ Este serviço:
 
 Finalmente, vamos criar os componentes para exibir as missões.
 
+### Confirgura o index
+
+Abra o arquivo `src/index.html` e adicione a referencia ao arquivo do tema:
+
+```html
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8">
+  <title>HokageDesk</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body class="bg-background-dark font-display text-gray-100">
+  <app-root></app-root>
+</body>
+</html>
+
+```
+
+
+### Confirgura o TailWind
+
+Crie o arquivo `src/theme.css` e configure o tailwind conforme abaixo:
+
+```css
+@theme {
+  --color-primary: #4A6741;
+  --color-background-light: #FDFBF5;
+  --color-background-dark: #2D2D2D;
+  --color-card-dark: #3C3C3C;
+  --color-leaf-green: #4A5C43;
+  --color-leaf-green-dark: #3A4A35;
+  --color-text-light: #2D3748;
+  --color-text-dark: #E2E8F0;
+
+  --font-display: "Space Grotesk", sans-serif;
+
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+}
+```
+
+Abra o arquivo `src/styles.css` e adicione a referencia ao arquivo do tema:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "./theme.css";
+```
+
 ### Gere os Componentes
 
 ```bash
-ng generate component app/dashboard
-ng generate component app/detail
+ng generate component dashboard
+ng generate component detail
 ```
 
 ### Configurando as Rotas
@@ -287,13 +356,19 @@ Abra o arquivo `src/app/app.routes.ts` e configure as rotas para os novos compon
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    { path: '', loadComponent: () => import('./dashboard/dashboard').then(c => c.DashboardComponent) },
-    { path: 'detail/:id', loadComponent: () => import('./detail/detail').then(c => c.DetailComponent) },
+    { path: '', loadComponent: () => import('./dashboard/dashboard').then(c => c.Dashboard) },
+    { path: 'detail/:id', loadComponent: () => import('./detail/detail').then(c => c.Detail) },
 ];
 
 ```
 
-### Implementando o `DashboardComponent`
+Abra o arquivo `src/app/app.html` e limpe o exemplo do angular-cli para o seguinte código:
+
+```html
+<router-outlet></router-outlet>
+```
+
+### Implementando o `Dashboard`
 
 Este componente terá um formulário para inserir o nome do ninja e exibirá a lista de missões geradas.
 
@@ -312,7 +387,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [FormsModule, RouterLink],
 })
-export class DashboardComponent {
+export class Dashboard {
   private readonly missionService = inject(MissionService);
 
   missionDefinition = signal('');
@@ -336,6 +411,7 @@ export class DashboardComponent {
   margin-left: 0;
 }
 ```
+
 **`src/app/dashboard/dashboard.html`**
 ```html
 <div class="min-h-screen w-full p-4 sm:p-6 md:p-8">
@@ -413,7 +489,7 @@ export class DashboardComponent {
 </div>
 ```
 
-### Implementando o `DetailComponent`
+### Implementando o `Detail`
 
 Este componente exibirá os detalhes de uma missão selecionada.
 
@@ -421,7 +497,7 @@ Este componente exibirá os detalhes de uma missão selecionada.
 ```typescript
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MissionService } from '../mission.service';
+import { MissionService } from '../mission';
 
 @Component({
   selector: 'app-detail',
@@ -430,7 +506,7 @@ import { MissionService } from '../mission.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
 })
-export class DetailComponent {
+export class Detail {
   private readonly route = inject(ActivatedRoute);
   private readonly missionService = inject(MissionService);
 
