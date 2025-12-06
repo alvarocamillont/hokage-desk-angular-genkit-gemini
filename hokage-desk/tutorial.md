@@ -44,6 +44,7 @@ npm i express@^4.21.1
 npm i @genkit-ai/express
 npm i @genkit-ai/google-genai
 npm i zod@^3.25
+npm i uuid
 ```
 
 ## 2. Configurando o Fluxo do Genkit
