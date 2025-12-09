@@ -6,9 +6,9 @@
 
 Antes de comenzar, asegúrate de tener las siguientes herramientas instaladas en tu máquina:
 
-*   **Node.js:** https://nodejs.org/
+*   **Node.js:** [https://nodejs.org/](https://nodejs.org/)
 *   **Angular CLI:** `npm install -g @angular/cli`
-*   **Git:** https://git-scm.com/
+*   **Git:** [https://git-scm.com/](https://git-scm.com/)
 
 ### Obteniendo una Clave de API de Gemini
 
@@ -20,7 +20,7 @@ Antes de comenzar, asegúrate de tener las siguientes herramientas instaladas en
 
 ### Configurando la Variable de Entorno
 
-Genkit lee la clave de API de una variable de entorno. Crea una variable de entorno, reemplazando `<SUA_API_KEY>` por la clave que copiaste:
+Genkit lee la clave de API de una variable de entorno. Crea una variable de entorno, reemplazando `<TU_API_KEY>` por la clave que copiaste:
 
 ```
 GOOGLE_API_KEY=<TU_API_KEY>
@@ -82,57 +82,49 @@ export const missionSchema = z
   .object({
     id: z.string().describe('Unique identifier for the mission'),
     title: z.string().describe('A creative and fitting title for the mission.'),
-    difficulty:
-      z
-        .string()
-        .describe(
-          'Classify the mission into one of the following ranks, based on its complexity and danger: D, C, B, A, or S.'
-        ),
-    missionValue:
-      z
-        .string()
-        .describe(
-          "Define a reward in Ryō. The value must be consistent with the mission's difficulty (e.g., Rank-D missions are low-value, Rank-S missions are very high-value)."
-        ),
-    detailedDescription:
-      z
-        .string()
-        .describe(
-          "Create a detailed, narrative-style mission briefing based on the user's initial input. It should include the background context, a clear primary objective, known risks or enemy intel, and the mission's location. This should read like an official mission scroll given to the team leader."
-        ),
-    ninjaTeamLevel:
-      z
-        .string()
-        .describe(
-          'Based on the mission\'s difficulty, suggest the team\'s rank. Use standard Naruto ranks like Genin, Chunin, Jonin, or ANBU. For legendary missions, you could even specify Sannin ou Kage-level.'
-        ),
-    assignedTeam:
-      z
-        .string()
-        .describe(
-          "Assign a suitable team. If a known, official team from the Naruto or Boruto universe fits the mission and members (e.g., 'Team 7', 'Ino-Shika-Cho', 'Team Guy'), use its official name. If no existing team is a perfect fit, create a new, thematic squad name (e.g., 'Sand Village Barrier Unit', 'Mist Village Cipher Squad')."
-        ),
-    teamMembers:
-      z
-        .array(
-          z.object({
-            name:
-              z
-                .string()
-                .describe(
-                  "Select a real character from the Naruto or Boruto anime who would be suitable for this mission's rank and objective."
-                ),
-            specialty:
-              z
-                .string()
-                .describe(
-                  "State this character's known signature jutsu or primary skill (e.g., 'Rasengan', 'Sharingan', 'Byakugan', 'Shadow Possession Jutsu')."
-                ),
-          })
-        )
-        .describe(
-          'A list containing exactly 3 members for the ninja team. The members chosen must be real characters from Naruto or Boruto.'
-        ),
+    difficulty: z
+      .string()
+      .describe(
+        'Classify the mission into one of the following ranks, based on its complexity and danger: D, C, B, A, or S.'
+      ),
+    missionValue: z
+      .string()
+      .describe(
+        "Define a reward in Ryō. The value must be consistent with the mission's difficulty (e.g., Rank-D missions are low-value, Rank-S missions are very high-value)."
+      ),
+    detailedDescription: z
+      .string()
+      .describe(
+        "Create a detailed, narrative-style mission briefing based on the user's initial input. It should include the background context, a clear primary objective, known risks or enemy intel, and the mission's location. This should read like an official mission scroll given to the team leader."
+      ),
+    ninjaTeamLevel: z
+      .string()
+      .describe(
+        'Based on the mission\'s difficulty, suggest the team\'s rank. Use standard Naruto ranks like Genin, Chunin, Jonin, or ANBU. For legendary missions, you could even specify Sannin or Kage-level.'
+      ),
+    assignedTeam: z
+      .string()
+      .describe(
+        "Assign a suitable team. If a known, official team from the Naruto or Boruto universe fits the mission and members (e.g., 'Team 7', 'Ino-Shika-Cho', 'Team Guy'), use its official name. If no existing team is a perfect fit, create a new, thematic squad name (e.g., 'Sand Village Barrier Unit', 'Mist Village Cipher Squad')."
+      ),
+    teamMembers: z
+      .array(
+        z.object({
+          name: z
+            .string()
+            .describe(
+              "Select a real character from the Naruto or Boruto anime who would be suitable for this mission's rank and objective."
+            ),
+          specialty: z
+            .string()
+            .describe(
+              "State this character's known signature jutsu or primary skill (e.g., 'Rasengan', 'Sharingan', 'Byakugan', 'Shadow Possession Jutsu')."
+            ),
+        })
+      )
+      .describe(
+        'A list containing exactly 3 members for the ninja team. The members chosen must be real characters from Naruto or Boruto.'
+      ),
   })
   .describe('The complete mission file in JSON format.');
 
@@ -173,7 +165,6 @@ export const missionGeneratorFlow = ai.defineFlow(
     };
   }
 );
-
 ```
 
 Este código:
@@ -217,7 +208,6 @@ app.post('/api/mission', async (req, res) => {
 });
 
 // Código del servidor continúa ...
-
 ```
 
 Este fragmento de código crea una ruta POST `/api/mission`. Cuando se llama a esta ruta con una definición de misión en el cuerpo de la solicitud, ejecuta el `missionGeneratorFlow` y devuelve las misiones generadas como respuesta.
@@ -239,7 +229,6 @@ ng generate service mission
 Abre el archivo recién creado `src/app/mission.ts` y añade el siguiente código:
 
 ```typescript
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { take } from 'rxjs';
@@ -313,9 +302,7 @@ Abre el archivo `src/index.html` y añade la referencia al archivo del tema:
   <app-root></app-root>
 </body>
 </html>
-
 ```
-
 
 ### Configura Tailwind
 
@@ -367,7 +354,6 @@ export const routes: Routes = [
     { path: '', loadComponent: () => import('./dashboard/dashboard').then(c => c.Dashboard) },
     { path: 'detail/:id', loadComponent: () => import('./detail/detail').then(c => c.Detail) },
 ];
-
 ```
 
 Abre el archivo `src/app/app.html` y reemplaza el contenido generado por Angular CLI con el siguiente código:
@@ -522,7 +508,6 @@ export class Detail {
     this.route.snapshot.paramMap.get('id')!
   );
 }
-
 ```
 
 **`src/app/detail/detail.css`**

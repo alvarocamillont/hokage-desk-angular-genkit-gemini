@@ -6,13 +6,13 @@ Welcome to Hokage Desk! This tutorial will guide you through the process of crea
 
 Before we begin, make sure you have the following tools installed on your machine:
 
-*   **Node.js:** https://nodejs.org/
+*   **Node.js:** [https://nodejs.org/](https://nodejs.org/)
 *   **Angular CLI:** `npm install -g @angular/cli`
-*   **Git:** https://git-scm.com/
+*   **Git:** [https://git-scm.com/](https://git-scm.com/)
 
 ### Obtaining a Gemini API Key
 
-1.  Access [Google AI Studio](https://aistudio.google.com/app) (formerly known as "Build with Google").
+1.  Access the [Google AI Studio](https://aistudio.google.com/app) (formerly known as "Build with Google").
 2.  Log in with your Google account.
 3.  Click on **"Get API key"** in the left menu.
 4.  Click on **"Create API key in new project"**.
@@ -82,57 +82,49 @@ export const missionSchema = z
   .object({
     id: z.string().describe('Unique identifier for the mission'),
     title: z.string().describe('A creative and fitting title for the mission.'),
-    difficulty:
-      z
-        .string()
-        .describe(
-          'Classify the mission into one of the following ranks, based on its complexity and danger: D, C, B, A, or S.'
-        ),
-    missionValue:
-      z
-        .string()
-        .describe(
-          "Define a reward in Ryō. The value must be consistent with the mission's difficulty (e.g., Rank-D missions are low-value, Rank-S missions are very high-value)."
-        ),
-    detailedDescription:
-      z
-        .string()
-        .describe(
-          "Create a detailed, narrative-style mission briefing based on the user's initial input. It should include the background context, a clear primary objective, known risks or enemy intel, and the mission's location. This should read like an official mission scroll given to the team leader."
-        ),
-    ninjaTeamLevel:
-      z
-        .string()
-        .describe(
-          'Based on the mission\'s difficulty, suggest the team\'s rank. Use standard Naruto ranks like Genin, Chunin, Jonin, or ANBU. For legendary missions, you could even specify Sannin ou Kage-level.'
-        ),
-    assignedTeam:
-      z
-        .string()
-        .describe(
-          "Assign a suitable team. If a known, official team from the Naruto or Boruto universe fits the mission and members (e.g., 'Team 7', 'Ino-Shika-Cho', 'Team Guy'), use its official name. If no existing team is a perfect fit, create a new, thematic squad name (e.g., 'Sand Village Barrier Unit', 'Mist Village Cipher Squad')."
-        ),
-    teamMembers:
-      z
-        .array(
-          z.object({
-            name:
-              z
-                .string()
-                .describe(
-                  "Select a real character from the Naruto or Boruto anime who would be suitable for this mission's rank and objective."
-                ),
-            specialty:
-              z
-                .string()
-                .describe(
-                  "State this character's known signature jutsu or primary skill (e.g., 'Rasengan', 'Sharingan', 'Byakugan', 'Shadow Possession Jutsu')."
-                ),
-          })
-        )
-        .describe(
-          'A list containing exactly 3 members for the ninja team. The members chosen must be real characters from Naruto or Boruto.'
-        ),
+    difficulty: z
+      .string()
+      .describe(
+        'Classify the mission into one of the following ranks, based on its complexity and danger: D, C, B, A, or S.'
+      ),
+    missionValue: z
+      .string()
+      .describe(
+        "Define a reward in Ryō. The value must be consistent with the mission's difficulty (e.g., Rank-D missions are low-value, Rank-S missions are very high-value)."
+      ),
+    detailedDescription: z
+      .string()
+      .describe(
+        "Create a detailed, narrative-style mission briefing based on the user's initial input. It should include the background context, a clear primary objective, known risks or enemy intel, and the mission's location. This should read like an official mission scroll given to the team leader."
+      ),
+    ninjaTeamLevel: z
+      .string()
+      .describe(
+        'Based on the mission\'s difficulty, suggest the team\'s rank. Use standard Naruto ranks like Genin, Chunin, Jonin, or ANBU. For legendary missions, you could even specify Sannin or Kage-level.'
+      ),
+    assignedTeam: z
+      .string()
+      .describe(
+        "Assign a suitable team. If a known, official team from the Naruto or Boruto universe fits the mission and members (e.g., 'Team 7', 'Ino-Shika-Cho', 'Team Guy'), use its official name. If no existing team is a perfect fit, create a new, thematic squad name (e.g., 'Sand Village Barrier Unit', 'Mist Village Cipher Squad')."
+      ),
+    teamMembers: z
+      .array(
+        z.object({
+          name: z
+            .string()
+            .describe(
+              "Select a real character from the Naruto or Boruto anime who would be suitable for this mission's rank and objective."
+            ),
+          specialty: z
+            .string()
+            .describe(
+              "State this character's known signature jutsu or primary skill (e.g., 'Rasengan', 'Sharingan', 'Byakugan', 'Shadow Possession Jutsu')."
+            ),
+        })
+      )
+      .describe(
+        'A list containing exactly 3 members for the ninja team. The members chosen must be real characters from Naruto or Boruto.'
+      ),
   })
   .describe('The complete mission file in JSON format.');
 
@@ -173,7 +165,6 @@ export const missionGeneratorFlow = ai.defineFlow(
     };
   }
 );
-
 ```
 
 This code:
@@ -217,7 +208,6 @@ app.post('/api/mission', async (req, res) => {
 });
 
 // Server code continues ...
-
 ```
 
 This code snippet creates a POST route `/api/mission`. When this route is called with a mission definition in the request body, it executes the `missionGeneratorFlow` and returns the generated missions as a response.
@@ -239,7 +229,6 @@ ng generate service mission
 Open the newly created file `src/app/mission.ts` and add the following code:
 
 ```typescript
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { take } from 'rxjs';
@@ -313,9 +302,7 @@ Open the `src/index.html` file and add the theme file reference:
   <app-root></app-root>
 </body>
 </html>
-
 ```
-
 
 ### Configure Tailwind
 
@@ -367,7 +354,6 @@ export const routes: Routes = [
     { path: '', loadComponent: () => import('./dashboard/dashboard').then(c => c.Dashboard) },
     { path: 'detail/:id', loadComponent: () => import('./detail/detail').then(c => c.Detail) },
 ];
-
 ```
 
 Open the `src/app/app.html` file and replace the content generated by Angular CLI with the following code:
@@ -383,7 +369,7 @@ This component will have a form to enter the mission definition and will display
 **`src/app/dashboard/dashboard.ts`**
 ```typescript
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { MissionService } from '../mission.service';
+import { MissionService } from '../mission';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
@@ -522,7 +508,6 @@ export class Detail {
     this.route.snapshot.paramMap.get('id')!
   );
 }
-
 ```
 
 **`src/app/detail/detail.css`**
@@ -596,4 +581,3 @@ npm start
 ```
 
 Access `http://localhost:4200` in your browser, type the mission description, and see the AI in action!
-
