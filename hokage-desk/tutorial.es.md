@@ -383,7 +383,7 @@ Este componente tendrá un formulario para introducir la definición de la misi�
 **`src/app/dashboard/dashboard.ts`**
 ```typescript
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { MissionService } from '../mission.service';
+import { MissionService } from '../mission';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
