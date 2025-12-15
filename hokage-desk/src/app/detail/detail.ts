@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MissionService } from '../mission.service';
+import { MissionService } from '../mission';
 
 @Component({
   selector: 'app-detail',
@@ -9,7 +9,7 @@ import { MissionService } from '../mission.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
 })
-export class DetailComponent {
+export class Detail{
   private readonly route = inject(ActivatedRoute);
   private readonly missionService = inject(MissionService);
 

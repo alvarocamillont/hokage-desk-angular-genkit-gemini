@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { MissionService } from '../mission.service';
+import { MissionService } from '../mission';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [FormsModule, RouterLink],
 })
-export class DashboardComponent {
+export class Dashboard {
   private readonly missionService = inject(MissionService);
 
   missionDefinition = signal('');
