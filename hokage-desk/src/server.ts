@@ -5,7 +5,7 @@ import {
   writeResponseToNodeResponse,
 } from '@angular/ssr/node';
 import express from 'express';
-import { missionGeneratorFlow } from './flows';
+import { missionGeneratorFlow, missionImageGeneratorFlow } from './flows';
 import { join } from 'node:path';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
@@ -18,6 +18,16 @@ app.use(express.json());
 app.post('/api/mission', async (req, res) => {
   try {
     const result = await missionGeneratorFlow(req.body);
+    res.json(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: (error as Error).message });
+  }
+});
+
+app.post('/api/mission/image', async (req, res) => {
+  try {
+    const result = await missionImageGeneratorFlow(req.body);
     res.json(result);
   } catch (error) {
     console.error(error);

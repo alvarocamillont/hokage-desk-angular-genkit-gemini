@@ -15,6 +15,7 @@ export interface Mission {
     name: string;
     specialty: string;
   }[];
+  imageUrl?: string;
 }
 
 @Injectable({
@@ -34,6 +35,20 @@ export class MissionService {
       .subscribe((response) => {
         this.missions.update((missions) => [...missions, response]);
         this.loading.set(false);
+        this.generateMissionImage(response.id, definition);
+      });
+  }
+
+  private generateMissionImage(missionId: string, description: string) {
+    this.http
+      .post<{ url: string }>('/api/mission/image', { description })
+      .pipe(take(1))
+      .subscribe((response) => {
+        this.missions.update((missions) =>
+          missions.map((m) =>
+            m.id === missionId ? { ...m, imageUrl: response.url } : m
+          )
+        );
       });
   }
 

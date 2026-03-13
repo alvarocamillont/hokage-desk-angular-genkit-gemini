@@ -15,6 +15,10 @@ export const MissionDefinitionSchema = z.object({
   definition: z.string().describe('Definition of the mission'),
 });
 
+export const MissionImageSchema = z.object({
+  url: z.string().describe('Generated Image URL (Base64 data or remote URL)'),
+});
+
 // Define output schema
 // Final schema for the Ninja Mission
 export const missionSchema = z
@@ -102,5 +106,32 @@ export const missionGeneratorFlow = ai.defineFlow(
       ...output,
       id: uuidv4(),
     };
+  }
+);
+
+// Define an image generation flow
+export const missionImageGeneratorFlow = ai.defineFlow(
+  {
+    name: 'missionImageGeneratorFlow',
+    inputSchema: z.object({ description: z.string() }),
+    outputSchema: MissionImageSchema,
+  },
+  async (input) => {
+    const prompt = `Create a highly detailed, cinematic anime-style illustration representing the following ninja mission: "${input.description}". The image should look like a still from a high-quality modern anime, with dramatic lighting and vibrant colors.`;
+
+    const response = await ai.generate({
+      model: googleAI.model('gemini-3.1-flash-image-preview'),
+      prompt,
+      config: {
+        responseModalities: ['IMAGE'],
+      },
+    });
+
+    const media = response.media;
+    if (!media || !media.url) {
+      throw new Error('Failed to generate mission image');
+    }
+
+    return { url: media.url };
   }
 );

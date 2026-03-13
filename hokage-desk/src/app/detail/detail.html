@@ -11,6 +11,18 @@
                     </div>
                 </div>
             </header>
+            
+            <div class="mb-8 w-full relative aspect-video rounded-xl overflow-hidden shadow-md bg-gray-200 dark:bg-gray-700">
+                @if (vm.imageUrl) {
+                    <img [src]="vm.imageUrl" alt="Mission Illustration" class="w-full h-full object-cover" />
+                } @else {
+                    <div class="absolute inset-0 flex items-center justify-center animate-pulse">
+                        <span class="material-symbols-outlined text-gray-400 dark:text-gray-500 text-6xl">image</span>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-medium absolute top-1/2 translate-y-8">Generating illustration...</p>
+                    </div>
+                }
+            </div>
+
             <div class="space-y-8">
                 <section>
                     <h2 class="text-xl font-bold mb-2 text-leaf-green dark:text-leaf-green-dark">Mission Briefing</h2>
