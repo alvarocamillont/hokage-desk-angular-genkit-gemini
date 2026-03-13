@@ -28,7 +28,12 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "externalDependencies": [
+              "genkit",
+              "@genkit-ai/google-genai",
+              "ansi-color"
+            ]
           },
           "configurations": {
             "production": {

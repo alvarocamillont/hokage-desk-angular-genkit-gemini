@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const ai = genkit({
   plugins: [googleAI()],
-  model: googleAI.model('gemini-2.5-flash', {
+  model: googleAI.model('gemini-flash-latest', {
     temperature: 0.8,
   }),
 });
