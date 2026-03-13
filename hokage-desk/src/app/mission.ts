@@ -15,7 +15,7 @@ export interface Mission {
     name: string;
     specialty: string;
   }[];
-  imageUrl?: string;
+  //imageUrl?: string;
 }
 
 @Injectable({
@@ -35,7 +35,7 @@ export class MissionService {
       .subscribe((response) => {
         this.missions.update((missions) => [...missions, response]);
         this.loading.set(false);
-        this.generateMissionImage(response.id, definition);
+        //this.generateMissionImage(response.id, definition);
       });
   }
 

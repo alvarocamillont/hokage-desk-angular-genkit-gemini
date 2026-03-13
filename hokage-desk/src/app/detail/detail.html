@@ -1,58 +1,63 @@
 <div class="min-h-screen flex items-center justify-center p-4">
     @if (mission(); as vm) {
-        <main
-            class="w-full max-w-4xl bg-primary text-text-light dark:bg-gray-800 dark:text-text-dark rounded-xl shadow-lg p-6 md:p-8">
-            <header class="mb-6">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <h1 class="text-3xl md:text-4xl font-bold text-leaf-green dark:text-leaf-green-dark">{{ vm.title }}</h1>
-                    <div class="flex items-center gap-3">
-                        <span class="custom-red-chip text-white text-xs font-bold px-3 py-1 rounded-full">Rank {{ vm.difficulty }}</span>
-                        <span class="custom-blue-chip text-white text-xs font-bold px-3 py-1 rounded-full">{{ vm.ninjaTeamLevel }}</span>
-                    </div>
+    <main
+        class="w-full max-w-4xl bg-primary text-text-light dark:bg-gray-800 dark:text-text-dark rounded-xl shadow-lg p-6 md:p-8">
+        <header class="mb-6">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <h1 class="text-3xl md:text-4xl font-bold text-leaf-green dark:text-leaf-green-dark">{{ vm.title }}</h1>
+                <div class="flex items-center gap-3">
+                    <span class="custom-red-chip text-white text-xs font-bold px-3 py-1 rounded-full">Rank {{
+                        vm.difficulty }}</span>
+                    <span class="custom-blue-chip text-white text-xs font-bold px-3 py-1 rounded-full">{{
+                        vm.ninjaTeamLevel }}</span>
                 </div>
-            </header>
-            
-            <div class="mb-8 w-full relative aspect-video rounded-xl overflow-hidden shadow-md bg-gray-200 dark:bg-gray-700">
-                @if (vm.imageUrl) {
-                    <img [src]="vm.imageUrl" alt="Mission Illustration" class="w-full h-full object-cover" />
-                } @else {
-                    <div class="absolute inset-0 flex items-center justify-center animate-pulse">
-                        <span class="material-symbols-outlined text-gray-400 dark:text-gray-500 text-6xl">image</span>
-                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-medium absolute top-1/2 translate-y-8">Generating illustration...</p>
-                    </div>
-                }
             </div>
-
-            <div class="space-y-8">
-                <section>
-                    <h2 class="text-xl font-bold mb-2 text-leaf-green dark:text-leaf-green-dark">Mission Briefing</h2>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-                        {{ vm.detailedDescription }}
-                    </p>
-                </section>
-                <section>
-                    <h2 class="text-xl font-bold mb-2 text-leaf-green dark:text-leaf-green-dark">Mission Value</h2>
-                    <div class="flex items-center gap-2">
-                        <span class="material-symbols-outlined text-2xl text-leaf-green dark:text-leaf-green-dark">
-                            account_balance_wallet
-                        </span>
-                        <p class="text-lg font-bold text-gray-700 dark:text-gray-300">{{ vm.missionValue }}</p>
-                    </div>
-                </section>
-                <section>
-                    <h2 class="text-xl font-bold mb-4 text-leaf-green dark:text-leaf-green-dark">Assigned Team: {{ vm.assignedTeam }}
-                    </h2>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                        @for (team of vm.teamMembers; track team) {
-                            <div
-                                class="flex flex-col items-center p-4 bg-background-light dark:bg-gray-700 rounded-lg shadow-sm">
-                                <h3 class="font-bold text-lg text-text-light dark:text-text-dark">{{ team.name }}</h3>
-                                <p class="text-sm text-gray-600 dark:text-gray-400">{{ team.specialty }}</p>
-                            </div>
-                        }
-                    </div>
-                </section>
+        </header>
+        <!-- Mission Image 
+        <div
+            class="mb-8 w-full relative aspect-video rounded-xl overflow-hidden shadow-md bg-gray-200 dark:bg-gray-700">
+            @if (vm.imageUrl) {
+            <img [src]="vm.imageUrl" alt="Mission Illustration" class="w-full h-full object-cover" />
+            } @else {
+            <div class="absolute inset-0 flex items-center justify-center animate-pulse">
+                <span class="material-symbols-outlined text-gray-400 dark:text-gray-500 text-6xl">image</span>
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 font-medium absolute top-1/2 translate-y-8">
+                    Generating illustration...</p>
             </div>
-        </main>
+            }
+        </div>
+        -->
+        <div class="space-y-8">
+            <section>
+                <h2 class="text-xl font-bold mb-2 text-leaf-green dark:text-leaf-green-dark">Mission Briefing</h2>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {{ vm.detailedDescription }}
+                </p>
+            </section>
+            <section>
+                <h2 class="text-xl font-bold mb-2 text-leaf-green dark:text-leaf-green-dark">Mission Value</h2>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-2xl text-leaf-green dark:text-leaf-green-dark">
+                        account_balance_wallet
+                    </span>
+                    <p class="text-lg font-bold text-gray-700 dark:text-gray-300">{{ vm.missionValue }}</p>
+                </div>
+            </section>
+            <section>
+                <h2 class="text-xl font-bold mb-4 text-leaf-green dark:text-leaf-green-dark">Assigned Team: {{
+                    vm.assignedTeam }}
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    @for (team of vm.teamMembers; track team) {
+                    <div
+                        class="flex flex-col items-center p-4 bg-background-light dark:bg-gray-700 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-lg text-text-light dark:text-text-dark">{{ team.name }}</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">{{ team.specialty }}</p>
+                    </div>
+                    }
+                </div>
+            </section>
+        </div>
+    </main>
     }
 </div>
