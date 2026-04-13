@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:hokage-desk": "node dist/hokage-desk/server/server.mjs"
+    "serve:ssr:hokage-desk": "node dist/hokage-desk/server/server.mjs",
+    "genkit:ui": "genkit start -- npx tsx --watch src/flows.ts"
   },
   "prettier": {
     "printWidth": 100,
